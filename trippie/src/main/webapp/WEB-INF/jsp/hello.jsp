@@ -3,7 +3,12 @@
 <html>
   <head><title>Hello :: Spring Application</title></head>
   <body>
-    <h1>Hello - Spring Application</h1>
-    <p>Greetings, it is now <c:out value="${now}"/></p>
+    <h1><fmt:message key="heading"/></h1>
+    <p><fmt:message key="greeting"/><c:out value="${model.now}"/></p>
+    <h3>Trips</h3>
+    <c:forEach items="${model.trips}" var="trip">
+    	<c:out value="${trip.name}"/><i><c:out value="${trip.description}"/></i>
+    	<br>
+    </c:forEach>
   </body>
 </html>

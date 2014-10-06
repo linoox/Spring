@@ -7,12 +7,46 @@
 
   <!-- the application context definition for the trippie DispatcherServlet -->
 
-  <bean name="/hello.html" class="trippie.web.controller.HelloController"/>
+  <bean id="tripManager" class="trippie.service.TripManagerImpl">
+  	<property name="trips">
+  		<list>
+  			<ref bean="trip1"/>
+  			<ref bean="trip2"/>
+  			<ref bean="trip3"/>
+  		</list>
+  	</property>
+  </bean>
+
+  <bean id="trip1" class="trippie.domain.Trip">
+  	<property name="name" value="YellowStone"/>
+  	<property name="description" value="YellowStone National Park trip"/>
+  </bean>	
+
+  <bean id="trip2" class="trippie.domain.Trip">
+  	<property name="name" value="k2"/>
+  	<property name="description" value="Himalayan trip"/>
+  </bean>
+
+  <bean id="trip3" class="trippie.domain.Trip">
+  	<property name="name" value="Alpine trek"/>
+  	<property name="description" value="beautiful trek in the Swiss Alps"/>
+  </bean>	
+
+  <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+  	<property name="basename" value="messages"/>
+  </bean>
+
+
+  <bean name="/hello.html" class="trippie.web.controller.TripController">
+  	<property name="tripManager" ref="tripManager"/>
+  </bean>
+  
 
   <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
   	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
   	<property name="prefix" value="/WEB-INF/jsp/"></property>
   	<property name="suffix" value=".jsp"></property>	
   </bean>	
+  
 
 </beans>

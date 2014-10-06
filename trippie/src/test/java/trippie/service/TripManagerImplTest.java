@@ -39,10 +39,7 @@ public class TripManagerImplTest extends TestCase{
 	public void testGetTrips() {
 		
 		List<Trip> trips = tripManager.getTrips();
-		System.out.println("tri:"+trips);
 		assertNotNull(trips);
-		//assertEquals("null",trips);
-		//System.out.println("trips:"+trips);
 		assertEquals(TRIP_COUNT, tripManager.getTrips().size());
 		
 		Trip trip = trips.get(0);
