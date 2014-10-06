@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 import org.springframework.web.servlet.ModelAndView;
 
-public class HelloControllerTests extends TestCase{
+public class HelloControllerTest extends TestCase{
 
     public void testHandleRequestView() throws Exception{		
         HelloController controller = new HelloController();
