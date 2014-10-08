@@ -4,6 +4,7 @@ public class Trip {
 
 	private String name;
 	private String description;
+	private Double budget;
 	
 	/*
 	public Trip(String name, String description) {
@@ -26,6 +27,12 @@ public class Trip {
 		this.description = description;
 	}
 	
+	public Double getBudget() {
+		return budget;
+	}
+	public void setBudget(double budget) {
+		this.budget = budget;
+	}
 
 	public String toString() {
 		StringBuffer sbuf = new StringBuffer();

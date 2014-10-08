@@ -8,5 +8,5 @@ import trippie.domain.Trip;
 public interface TripManager extends Serializable{
 	
 	public List<Trip> getTrips();
-	public void createTrip();
+	public void increaseBudget(int increasePercentage);
 }

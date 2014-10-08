@@ -41,6 +41,16 @@
   	<property name="tripManager" ref="tripManager"/>
   </bean>
   
+  <bean name="/tripbudgetincrease.html" class="trippie.web.controller.TripBudgetIncreaseFormController">
+  	<property name="commandName" value="tripBudgetIncrease"/>
+  	<property name="commandClass" value="trippie.service.TripBudgetIncrease"/>
+  	<property name="validator">
+  	 <bean class="trippie.service.TripBudgetIncreaseValidator"/>
+  	</property>
+  	<property name="formView" value="budgetincrease"/>
+  	<property name="tripManager" ref="tripManager"/>
+  </bean>
+  
 
   <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
   	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>

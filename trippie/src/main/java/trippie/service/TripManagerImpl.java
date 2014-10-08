@@ -21,8 +21,14 @@ public class TripManagerImpl implements TripManager{
 	}
 	
 	@Override
-	public void createTrip() {
-		throw new UnsupportedOperationException();
+	public void increaseBudget(int increasePercent) {
+        if (trips != null) {
+            for (Trip product : trips) {
+                double newBudget = product.getBudget().doubleValue() * 
+                                    (100 + increasePercent)/100;
+                product.setBudget(newBudget);
+            }
+        }
 	}
 	
 	

@@ -5,13 +5,10 @@
   <body>
     <h1><fmt:message key="heading"/></h1>
     <p><fmt:message key="greeting"/><c:out value="${model.now}"/></p>
-    <h3>Trips</h3>
-    <c:forEach items="${model.trips}" var="trip">
-    	<c:out value="${trip.name}"/><i><c:out value="${trip.description}"/></i>
-    	<br>
-    </c:forEach>
+    <h3>Increase Result</h3>
+    <br>
+    Price increased by:"${model.increase}"
      <br>
-    <a href="<c:url value="tripbudgetincrease.htm"/>">Increase Prices</a>
     <br>
   </body>
 </html>
