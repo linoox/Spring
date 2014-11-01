@@ -20,23 +20,13 @@ import trippie.service.TripManager;
 public class TripController implements Controller {
 
     protected final Log logger = LogFactory.getLog(getClass());
-    private TripManager tripManager;
+
+	@Override
+	public ModelAndView handleRequest(HttpServletRequest arg0,
+			HttpServletResponse arg1) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-    	String now = (new Date()).toString();
-        logger.info("Returning hello view with"+now);
-
-        Map<String, Object> myModel = new HashMap<String, Object>();
-        myModel.put("now", now);
-        myModel.put("trips", this.tripManager.getTrips());
-        
-        return new ModelAndView("hello","model",myModel);
-    }
     
-    public void setTripManager(TripManager tripManager) {
-    	this.tripManager=tripManager;
-    }
-
 }
